@@ -1,4 +1,4 @@
-from models.models import Mage,Ranger,Warrior,Swordsman,Golem,Rogue
+from models.models import Mage,Ranger,Warrior,Swordsman,Golem,Rogue,Witch
 from numpy import random
 from os import system
 
@@ -20,8 +20,8 @@ def combat_logic(hero,enemy,exp_per_hit = 10):
         print(f"\nAtılan zar: {hero_dice}")
 
         if hero_dice < enemy_dice:
-            print(f"Saldırı Başarısız {enemy.__class__.__name__} size {enemy.damage} hasar vurdu")
-            hero.taken_damage(enemy.damage)
+            print(f"Saldırı Başarısız {enemy.__class__.__name__} size {enemy.damage + enemy.spell} hasar vurdu")
+            hero.taken_damage(enemy.damage + enemy.spell)
         elif hero_dice > enemy_dice:
             raw_damage = hero.damage + hero.spell
             calculated_damage = int(raw_damage * (hero_dice / 5))
@@ -53,10 +53,10 @@ print("Bir sınıf seç\n1-Mage(Büyücü)\n2-Swordsman(Kılıçcı)\n3-Ranger(O
 choice = int(input("Seciminiz: "))
 
 hero_map = {1: Mage, 2: Swordsman, 3: Ranger, 4: Warrior}
-hero = hero_map.get(choice, Warrior)() # Hatalı seçimde varsayılan Warrior
+hero = hero_map.get(choice, Warrior)()
 
 clear()
-print("Orta Şehrine Hoşgeldiniz Ne yapmak istersiniz\n1-Ormana git\n2-Şehir merkezine git")
+print("Orta Şehrine Hoşgeldiniz Ne yapmak istersiniz\n1-Ormana git\n2-Şehir merkezine git\n3-Bataklığa git")
 location_choice = int(input("Seçiminiz: "))
 
 if location_choice == 1:
@@ -81,3 +81,12 @@ elif location_choice == 2:
         combat_logic(hero, Rogue())
     else:
         combat_logic(hero, Rogue())
+
+elif location_choice == 3:
+    clear()
+    print("Bataklıkta bir cadıyla karşılaştın!\n1-Saldır\n2-Kaç")
+    action = int(input("Seçiminiz: "))
+    if action == 1:
+        combat_logic(hero, Witch())
+    else:
+        combat_logic(hero, Witch())

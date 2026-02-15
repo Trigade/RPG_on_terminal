@@ -19,8 +19,12 @@ class Swordsman(PlayableCharacter):
 
 class Golem(Character):
     def __init__(self):
-        super().__init__(health = 250, armor = 0, damage = 12, spell = 0)
+        super().__init__(health = 400, armor = 0, damage = 12, spell = 0)
 
 class Rogue(Character):
     def __init__(self):
-        super().__init__(health = 80, armor = 15, damage = 25, spell = 0)
+        super().__init__(health = 150, armor = 15, damage = 25, spell = 0)
+
+class Witch(Character):
+    def __init__(self):
+        super().__init__(health = 120, armor = 0, damage = 4, spell = 25)
