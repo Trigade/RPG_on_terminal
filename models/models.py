@@ -2,7 +2,7 @@ from models.playable_character import PlayableCharacter
 from models.character import Character
 
 class Mage(PlayableCharacter):
-    def ___init__(self):
+    def __init__(self):
         super().__init__(health = 60, armor = 3, damage = 5, spell = 25)
 
 class Ranger(PlayableCharacter):

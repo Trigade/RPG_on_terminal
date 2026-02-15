@@ -14,5 +14,5 @@ class PlayableCharacter(Character):
 
     def level_up(self):
         self.level += 1
-        self.exp = self.exp_to_next_level
+        self.exp -= self.exp_to_next_level
         self.exp_to_next_level = int(self.exp_to_next_level * 1.5)
