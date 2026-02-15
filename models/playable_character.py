@@ -4,7 +4,7 @@ class PlayableCharacter(Character):
     def __init__(self, health , armor , damage ,spell ,hp_gain , dmg_gain ,spell_gain , armor_gain):
         super().__init__(health, armor, damage, spell)
         self.exp = 0
-        self.level = 0
+        self.level = 1
         self.exp_to_next_level = 100
 
         self.hp_gain = hp_gain
