@@ -3,24 +3,24 @@ from models.character import Character
 
 class Mage(PlayableCharacter):
     def __init__(self):
-        super().__init__(health = 60, armor = 3, damage = 5, spell = 25,hp_gain=10 , dmg_gain=10 , spell_gain= 10 ,armor_gain= 10)
+        super().__init__(health = 60, armor = 2, damage = 5, spell = 30,hp_gain=8 , dmg_gain=2 , spell_gain= 12 ,armor_gain= 1)
 
 class Ranger(PlayableCharacter):
     def __init__(self):
-        super().__init__(health = 80, armor = 7, damage = 18, spell = 5,hp_gain=10 , dmg_gain=10 , spell_gain= 10 ,armor_gain= 10)
+        super().__init__(health = 90, armor = 6, damage = 22, spell = 4,hp_gain=12 , dmg_gain=8 , spell_gain= 2 ,armor_gain= 3)
 
 class Warrior(PlayableCharacter):
     def __init__(self):
-        super().__init__(health = 150, armor = 10, damage = 20, spell = 0,hp_gain=10 , dmg_gain=10 , spell_gain= 10 ,armor_gain= 10)
+        super().__init__(health = 160, armor = 12, damage = 18, spell = 0,hp_gain=12 , dmg_gain=8 , spell_gain= 2 ,armor_gain= 3)
 
 class Swordsman(PlayableCharacter):
     def __init__(self):
-        super().__init__(health = 100, armor = 10, damage = 15, spell = 0,hp_gain=10 , dmg_gain=10 , spell_gain= 10 ,armor_gain= 10)
+        super().__init__(health = 110, armor = 10, damage = 20, spell = 0,hp_gain=15 , dmg_gain=6 , spell_gain= 10 ,armor_gain= 4)
 
 class Golem(Character):
     def __init__(self):
-        super().__init__(health = 200, armor = 0, damage = 15, spell = 0)
+        super().__init__(health = 250, armor = 0, damage = 12, spell = 0)
 
 class Rogue(Character):
     def __init__(self):
-        super().__init__(health = 100, armor = 20, damage = 20, spell = 0)
+        super().__init__(health = 80, armor = 15, damage = 25, spell = 0)
